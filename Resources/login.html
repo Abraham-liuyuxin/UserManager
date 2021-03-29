@@ -1,9 +1,11 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>登录界面</title>
-<link rel="stylesheet" type="text/css" href="css/login.css">
+    <meta charset="utf-8">
+    <title>登录界面</title>
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/login.js"></script>
 </head>
 
 <body>
@@ -16,13 +18,13 @@
                 <form class="loginform">
                     <ul>
                         <li>
-                            <input type="text" class="loginuser" />                    
+                            <input type="text" class="loginuser" id="username" placeholder="请输入用户名"/>
                         </li>
                         <li>
-                            <input type="password" class="loginpwd" />
+                            <input type="password" class="loginpwd" id="userpwd" placeholder="请输入密码"/>
                         </li>
                         <li>
-                            <input type="button" class="loginbtn" value="登录" />
+                            <input type="button" class="loginbtn" value="登录" id="loginbtn"/>
                         </li>
                     </ul>
                 </form>
