@@ -10,7 +10,32 @@ $(function ($){
                 "age":12,
                 "phone":155252529639,
                 "address":"HUST"
+            },
+            {
+                "id":2,
+                "username":"李明",
+                "sex":"男",
+                "age":12,
+                "phone":155252529639,
+                "address":"HUST"
+            },
+            {
+                "id":3,
+                "username":"李明",
+                "sex":"男",
+                "age":12,
+                "phone":155252529639,
+                "address":"HUST"
+            },
+            {
+                "id":4,
+                "username":"李明",
+                "sex":"男",
+                "age":12,
+                "phone":155252529639,
+                "address":"HUST"
             }
+
         ],
         columns:[
             {
@@ -56,8 +81,16 @@ $(function ($){
                 valign: 'middle',
             }
         ]
+    })
 
-
+    $("#delete").on("click", function () {
+        var selectionsnums = table.bootstrapTable('getSelections')
+        console.log(selectionsnums)
+        for (let row of selectionsnums){
+            var uid = row.id.toString()
+            table.bootstrapTable('remove', {field:'id', values:uid})
+        }
 
     })
+
 })
