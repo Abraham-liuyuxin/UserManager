@@ -101,7 +101,8 @@ body
 {
     width: 111px;
     height: 35px;
-    background-image: url(../images/buttonbg.png) repeat-x;
+    background-image: url(../images/buttonbg.png);
+    background-repeat: repeat-x;
     font-weight: bold;
     cursor: pointer;
     font-size: 14px;
