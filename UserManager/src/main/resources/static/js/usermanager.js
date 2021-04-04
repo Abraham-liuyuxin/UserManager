@@ -45,13 +45,13 @@ $(function ($){
                 valign: 'middle',
             },
             {
-                field: 'id',
+                field: 'uid',
                 title: '编号',
                 align: 'center',
                 valign: 'middle',
             },
             {
-                field: 'username',
+                field: 'uname',
                 title: '用户名',
                 align: 'center',
                 valign: 'middle',
@@ -80,16 +80,65 @@ $(function ($){
                 align: 'center',
                 valign: 'middle',
             }
-        ]
+        ],
+        url: "/getusers",
+        method: "get",
+        async: true
     })
 
     $("#delete").on("click", function () {
         var selectionsnums = table.bootstrapTable('getSelections')
         console.log(selectionsnums)
-        for (let row of selectionsnums){
-            var uid = row.id.toString()
-            table.bootstrapTable('remove', {field:'id', values:uid})
-        }
+        // for (let row of selectionsnums){
+        //     var uid = row.id.toString()
+        //     table.bootstrapTable('remove', {field:'id', values:uid})
+        // }
+
+        $.ajax({
+            url: '/delete',
+            type: 'post',
+            contentType: "application/json",
+            data: JSON.stringify(selectionsnums),
+            success: function () {
+                alert("删除用户成功");
+                table.bootstrapTable('refresh');
+            },
+            error: function () {
+                alert("删除用户失败");
+            }
+        })
+
+    })
+
+    $("#adduser").on("click", function () {
+        var uname = $("#name").val();
+        var sex = $("#sex").val();
+        var age = $("#age").val();
+        var phone = $("#phone").val();
+        var address = $("#address").val();
+
+        $.ajax({
+            url: '/add',
+            type: 'post',
+            contentType: "application/json",
+            dataType: "json",
+            cache: false,
+            data: JSON.stringify({
+                "uname": uname,
+                "sex": sex,
+                "age": age,
+                "phone": phone,
+                "address": address
+            }),
+            success: function () {
+                alert("添加用户成功");
+                table.bootstrapTable('refresh');
+            },
+            error: function () {
+                alert("添加用户失败");
+            }
+        })
+
 
     })
 
