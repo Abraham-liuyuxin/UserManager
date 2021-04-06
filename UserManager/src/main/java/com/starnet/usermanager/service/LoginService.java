@@ -15,6 +15,7 @@ public class LoginService {
     public boolean isPwdCorrected(Map<String,String> map){
         String uname = map.get("uname");
         String ucode = map.get("ucode");
+        if (uname=="" || ucode=="") return false;
         Map<String,String> name = new HashMap();
         name.put("uname", uname);
         System.out.println(name);

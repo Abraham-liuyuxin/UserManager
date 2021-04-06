@@ -3,24 +3,21 @@ $(function ($){
         var userName = $("#username").val();
         var passwd = $("#userpwd").val();
         $.ajax({
-            url: '/signin',
+            url: '/security-signin',
             type: 'post',
+            contentType: 'application/json',
             dataType: "json",
             cache: false,
-            data: {
+            data: JSON.stringify({
                 uname: userName,
                 ucode: passwd
-            },
+            }),
             error: function (){
                 alert("用户名或密码错误！")
             },
             success: function (res){
                 console.log(res);
-                if (res.auth === "1"){
-                    window.location.replace("index.html");
-                }else {
-                    alert("用户名或密码错误！");
-                }
+                window.location.replace("index.html");
             }
         });
     })
