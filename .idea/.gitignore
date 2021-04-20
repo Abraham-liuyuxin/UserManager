@@ -2,7 +2,7 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
-/../../../../:\Starnet\web_2021\.idea/dataSources/
+/../../../../../:\Starnet\web_2021\usermanager\.idea/dataSources/
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
