@@ -17,7 +17,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Transactional
     @Query("delete from user_info ui where ui.uid in (?1)")
-    void deleteGroups(List<Integer> idList);
+    void delete(List<Integer> idList);
 
     User deleteByUidAndUname(Integer uid, String uname);
 
