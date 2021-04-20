@@ -12,11 +12,13 @@ $(function ($){
                 uname: userName,
                 ucode: passwd
             }),
-            error: function (){
-                alert("用户名或密码错误！")
+            error: function (jqXHR){
+                console.log(jqXHR);
+                alert(jqXHR.responseJSON.Msg);
             },
             success: function (res){
                 console.log(res);
+                alert(res.Msg);
                 window.location.replace("index.html");
             }
         });

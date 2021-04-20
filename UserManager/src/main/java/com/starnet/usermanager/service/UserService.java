@@ -18,6 +18,6 @@ public class UserService {
         for (User user : userList){
             idList.add(user.getUid());
         }
-        userRepository.delete(idList);
+        userRepository.deleteGroups(idList);
     }
 }

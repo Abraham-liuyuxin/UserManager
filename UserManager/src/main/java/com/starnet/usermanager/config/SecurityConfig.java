@@ -48,6 +48,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         loginFilter.setUsernameParameter("uname");
         loginFilter.setPasswordParameter("ucode");
         loginFilter.setAuthenticationSuccessHandler(new MyAuthenticationSuccessHandler("index.html"));
+        loginFilter.setAuthenticationFailureHandler(new MyAuthenticationFailureHandler());
         return loginFilter;
     }
 
